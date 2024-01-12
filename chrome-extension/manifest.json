@@ -1,0 +1,37 @@
+{
+	"manifest_version": 2,
+	"name": "godard",
+	"version": "1.0",
+	"description": "电影资源",
+	"icons": {
+		"16": "img/icon.png",
+		"48": "img/icon.png",
+		"128": "img/icon.png"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://movie.douban.com/subject/*/*"
+			],
+			"js": [
+				"js/douban.js"
+			],
+			"run_at": "document_end"
+		},
+		{
+			"matches": [
+				"https://www.imdb.com/title/*/*"
+			],
+			"js": [
+				"js/imdb.js"
+			],
+			"run_at": "document_end"
+		}
+	],
+	"browser_action": {
+		"default_icon": "img/icon.png",
+		"default_title": "godard--电影信息助手",
+		"default_popup": "popup.html"
+	},
+	"homepage_url": "http://github.com/tokki/godard"
+}
